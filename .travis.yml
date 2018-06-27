@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "stable"
+script:
+  - npx gatsby build
+after_success:
+  - npx surge --project ./public/ --domain http://abusive-skin.surge.sh
