@@ -1,6 +1,6 @@
 ---
-path: "/blog/my-first-post"
-date: "2017-11-07"
+path: "/mujadara"
+date: "2018-06-27"
 title: "My first blog post"
 ---
 
@@ -11,5 +11,4 @@ this is a first md post
 deployed to food.facu.tk
 
 Inline-style:
-![mujadara](mujadara.jpg "mujadara")
-
+![mujadara](img/mujadara.jpg "mujadara")
