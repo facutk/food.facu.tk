@@ -8,6 +8,8 @@ title: "My first blog post"
 
 this is a first md post
 
+deployed to food.facu.tk
+
 Inline-style:
 ![mujadara](mujadara.jpg "mujadara")
 
