@@ -18,7 +18,7 @@ const StyledTitle = styled.div`
 
   & h1 {
     margin: 0;
-    font-family: "Work Sans";
+    font-family: "Arial";
   }
 `;
 
