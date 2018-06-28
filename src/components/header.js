@@ -4,20 +4,20 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
-  color: #333;
   margin-bottom: 1.45rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 1px solid #eee;
-  padding: 1em 0;
+  padding: 25px 0;
   max-width: 960;
+  font-size: 1.2em;
+  letter-spacing: 1px;
 `;
 
 const StyledLink = styled(Link)`
   color: #333;
   font-weight: bold;
-  font-size: 1.1em;
   text-decoration: none;
   text-transform: uppercase;
 `;

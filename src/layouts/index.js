@@ -14,6 +14,7 @@ const StyledLayout = styled.div`
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  color: #333;
 `;
 
 const Layout = ({ children, data }) => { console.log(data) ;return (
