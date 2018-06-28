@@ -7,9 +7,16 @@ import Header from '../components/header'
 
 const StyledLayout = styled.div`
   font-family: 'Work Sans', sans-serif;
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  font-weight: 300;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 `;
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data }) => { console.log(data) ;return (
   <StyledLayout>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -19,18 +26,11 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
-      }}
-    >
+    <div>
       {children()}
     </div>
   </StyledLayout>
-)
+)}
 
 Layout.propTypes = {
   children: PropTypes.func,

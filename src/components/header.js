@@ -10,32 +10,23 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 1px solid #eee;
-  padding: 0.5rem 0;
-`;
-
-const StyledTitle = styled.div`
+  padding: 1em 0;
   max-width: 960;
-
-  & h1 {
-    margin: 0;
-  }
 `;
 
 const StyledLink = styled(Link)`
   color: #333;
+  font-weight: bold;
+  font-size: 1.1em;
   text-decoration: none;
   text-transform: uppercase;
 `;
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
-    <StyledTitle>
-      <h1>
-        <StyledLink to="/">
-          {siteTitle}
-        </StyledLink>
-      </h1>
-    </StyledTitle>
+    <StyledLink to="/">
+      {siteTitle}
+    </StyledLink>
     <div>
       recipe!
     </div>
