@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import styled from 'styled-components';
 
 import Header from '../components/header'
 
+const StyledLayout = styled.div`
+  font-family: 'Work Sans', sans-serif;
+`;
+
 const Layout = ({ children, data }) => (
-  <div>
+  <StyledLayout>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -19,13 +24,12 @@ const Layout = ({ children, data }) => (
         margin: '0 auto',
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-        fontFace: 'Arial'
+        paddingTop: 0
       }}
     >
       {children()}
     </div>
-  </div>
+  </StyledLayout>
 )
 
 Layout.propTypes = {
