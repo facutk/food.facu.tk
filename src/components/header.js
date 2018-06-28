@@ -4,34 +4,42 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
-  background: rebeccapurple;
+  color: #333;
   margin-bottom: 1.45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
 `;
 
-const StyledHeader = styled.div`
-  margin: 0 auto;
+const StyledTitle = styled.div`
   max-width: 960;
-  padding: 1.45rem 1.0875rem;
 
   & h1 {
     margin: 0;
+    font-family: "Work Sans";
   }
 `;
 
 const StyledLink = styled(Link)`
-  color: white;
+  color: #333;
   text-decoration: none;
+  text-transform: uppercase;
 `;
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
-    <StyledHeader>
+    <StyledTitle>
       <h1>
         <StyledLink to="/">
           {siteTitle}
         </StyledLink>
       </h1>
-    </StyledHeader>
+    </StyledTitle>
+    <div>
+      recipe!
+    </div>
   </HeaderWrapper>
 );
 
