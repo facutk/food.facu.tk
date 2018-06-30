@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
-import Header from '../components/header'
+// import Header from '../components/header'
 
 const StyledLayout = styled.div`
   font-family: 'Work Sans', sans-serif;
-  width: 75%;
+  max-width: 960px;
   margin: 0 auto;
+  padding: 0 10px;
   padding-bottom: 3rem;
   font-weight: 300;
   font-style: normal;
@@ -17,7 +18,7 @@ const StyledLayout = styled.div`
   color: #333;
 `;
 
-const Layout = ({ children, data }) => { console.log(data) ;return (
+const Layout = ({ children, data }) => (
   <StyledLayout>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -26,12 +27,12 @@ const Layout = ({ children, data }) => { console.log(data) ;return (
         { name: 'keywords', content: 'recipes, food, quick, easy' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
     <div>
       {children()}
     </div>
   </StyledLayout>
-)}
+);
 
 Layout.propTypes = {
   children: PropTypes.func,

@@ -1,6 +1,7 @@
 import React from 'react'
 // import Link from 'gatsby-link'
 import PostLink from "../components/PostLink"
+import Header from '../components/header';
 
 // const IndexPage = () => (
 //   <div>
@@ -16,19 +17,32 @@ import PostLink from "../components/PostLink"
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
+    site
   },
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
-  return <div>{Posts}</div>
+  return (
+    <div>
+      <Header siteTitle={site.siteMetadata.title} />
+      <div>
+        {Posts}
+      </div>
+    </div>
+  );
 }
 
 export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

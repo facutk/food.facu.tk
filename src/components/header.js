@@ -13,6 +13,7 @@ const HeaderWrapper = styled.div`
   max-width: 960;
   font-size: 1.2em;
   letter-spacing: 1px;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -20,25 +21,35 @@ const StyledLink = styled(Link)`
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  margin-right: 10px;
+
+  &:hover {
+    border-bottom: 1px solid #bbb;
+  }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, recipe }) => (
   <HeaderWrapper>
     <StyledLink to="/">
       {siteTitle}
     </StyledLink>
-    <div>
-      recipe!
-    </div>
+    {recipe &&
+      <div>
+        {recipe}
+      </div>
+    }
   </HeaderWrapper>
 );
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
+  recipe: PropTypes.string
 };
 
 Header.defaultProps = {
-  siteTitle: ''
+  siteTitle: '',
+  recipe: null
 };
 
 export default Header;
