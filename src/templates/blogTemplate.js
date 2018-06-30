@@ -20,8 +20,8 @@ export default function Template({
           ]}
         />
         <div className="blog-post">
-          <h5>Cooking Time: {frontmatter.cookingTime}</h5>
-          <h5>What</h5>
+          <h5><span style={{ fontSize: '1.3em' }}>◷</span> ready in {frontmatter.cookingTime}</h5>
+          <h5>WHAT</h5>
           <ul>
             {frontmatter.ingredients.map(ingredient => (
               <li key={ingredient.ingredient}>
@@ -29,7 +29,7 @@ export default function Template({
               </li>
             ))}
           </ul>
-          <h5>How</h5>
+          <h5>HOW</h5>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
