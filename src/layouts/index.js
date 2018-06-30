@@ -26,8 +26,10 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Easy and delicious recipes' },
         { name: 'keywords', content: 'recipes, food, quick, easy' },
       ]}
-    />
-    {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+    >
+      <link rel='icon' href='favicon.ico' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+    </Helmet>
     <div>
       {children()}
     </div>

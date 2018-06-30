@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from 'react-helmet'
+import Minutes from 'minutes.js';
 import Header from '../components/header';
 
 export default function Template({
@@ -8,6 +9,7 @@ export default function Template({
   console.log(data.site.siteMetadata.title);
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
+  const cookingTime = new Minutes(frontmatter.minutesCooking).toString();
 
   return (
     <div>
@@ -20,7 +22,7 @@ export default function Template({
           ]}
         />
         <div className="blog-post">
-          <h5><span style={{ fontSize: '1.3em' }}>◷</span> ready in {frontmatter.cookingTime}</h5>
+          <h5><span style={{ fontSize: '1.3em' }}>◷</span> ready in {cookingTime}</h5>
           <h5>WHAT</h5>
           <ul>
             {frontmatter.ingredients.map(ingredient => (
@@ -58,7 +60,7 @@ export const pageQuery = graphql`
           quantity
           uom
         }
-        cookingTime
+        minutesCooking
       }
     }
   }

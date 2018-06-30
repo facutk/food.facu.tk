@@ -19,7 +19,7 @@ ingredients: [
         uom: 'Large'
     }
 ]
-cookingTime: '40 minutes' 
+minutesCooking: 40
 ---
 
 - Chop the onions
